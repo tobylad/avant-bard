@@ -23,5 +23,13 @@ To run the project, type `rails s` in your terminal.  Now, navigate to a browser
 
 Thanks, I hope the right words find you!  
 
-*Note: A deployment is coming soon!*
+*Note: A deployment is coming soon!*    
+
+## Built With:
+
+-Ruby on Rails  
+-jQuery    
+-Bootstrap    
+-Datamuse API    
+-Ruby-anagram   
 
