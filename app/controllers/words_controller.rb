@@ -15,5 +15,11 @@ class WordsController < ApplicationController
     render "rhymes"
   end
 
+  def scrabble
+    @letters             = params["l"]
+    @intersecting_letter = params["i"]
+    @found_words         = Word.suggest_scrabble(@letters, @intersecting_letter)
+    render "scrabble"
+  end
 
 end

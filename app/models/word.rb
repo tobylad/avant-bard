@@ -20,5 +20,14 @@ class Word < ApplicationRecord
     word_objects.each { |obj| found_words << obj["word"] }
     found_words
   end
+
+  def self.suggest_scrabble(letters, intersecting_letter)
+    # letters_array = letters.chars
+    # length        = letters.chars.length + 1
+    # found_words_1 = []
+    root     = RubyAnagrams::Root.new("all_words.txt")
+    anagrams = root.anagrams(letters + intersecting_letter, partial: true)
+    anagrams
+  end
   
 end
