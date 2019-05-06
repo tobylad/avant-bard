@@ -1,8 +1,8 @@
 # Avant-Bard
 
-Good tidings!  I'm glad to came to check out my app!
+Good tidings!
 
-To run it locally in your terminal:
+To run this project locally in your terminal:
 
 `git clone` https://github.com/tobylad/avant-bard.git
 
@@ -15,5 +15,7 @@ Next, in the root folder:
 
 To run the project, type `rails s` in your terminal.  Now, navigate to a browser and enter http://localhost:3000/.  
 
-Thanks, I hope the right words find you!
+Thanks, I hope the right words find you!  
+
+*Note: A deployment is coming soon!*
 
