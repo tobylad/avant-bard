@@ -1,5 +1,17 @@
-<ul>
-  <% @words.each do |word| %>
-    <li><%= word %></li>
+<div class="word-form-box">
+  <p><strong>Similar Words</strong></p>
+  <%= form_tag("/similar", method: "get") do %>
+    <%= label_tag(:q, "Enter a word to get words like it:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-</ul>
+</div>
+
+<div class="word-form-box">
+  <p><strong>Rhyming Words</strong></p>
+  <%= form_tag("/rhyme", method: "get") do %>
+    <%= label_tag(:q, "Enter a word to get words that rhyme with it:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>

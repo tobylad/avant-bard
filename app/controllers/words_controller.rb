@@ -1,19 +1,19 @@
 class WordsController < ApplicationController
-  include HTTParty
 
   def index
-    # resp         = HTTParty.get('https://api.datamuse.com/words?ml=ringing+in+the+ears')
-    # word_objects = resp.parsed_response 
-    # parsed_words = []
-
-    # word_objects.each do |word_object|
-    #   parsed_words << word_object["word"]
-    # end
-
-    # @words = parsed_words
-    @words = ["poo", "fart"]
   end
 
+  def similar
+    @word_searched = params["q"]
+    @found_words   = Word.find_similar(@word_searched)
+    render "similar"
+  end
+
+  def rhyme
+    @word_searched = params["q"]
+    @found_words   = Word.find_rhymes(@word_searched)
+    render "rhymes"
+  end
 
 
 end
