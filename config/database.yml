@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: scrabble_word_finder_development
+  database: avant_bard_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: scrabble_word_finder
+  #username: avant_bard
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: scrabble_word_finder_test
+  database: avant_bard_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: scrabble_word_finder_production
-  username: scrabble_word_finder
-  password: <%= ENV['SCRABBLE_WORD_FINDER_DATABASE_PASSWORD'] %>
+  database: avant_bard_production
+  username: avant_bard
+  password: <%= ENV['avant_bard_DATABASE_PASSWORD'] %>
