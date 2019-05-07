@@ -20,11 +20,12 @@
 
 <div class="word-form-box">
   <p><strong>Scrabble Word Finder</strong></p>
+  <p><i>Note: Enter * for each blank tile</i></p>
   <%= form_tag("/scrabble", method: "get") do %>
     <%= label_tag(:l, "Enter letters from your board:") %>
     <%= text_field_tag(:l) %>
     <br/>
-    <%= label_tag(:i, "Enter intersecting letter (if any)") %>
+    <%= label_tag(:i, "Enter intersecting letters (if any)") %>
     <%= text_field_tag(:i) %>
     
     <br/>
