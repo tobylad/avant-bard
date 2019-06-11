@@ -20,3 +20,16 @@ body {
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+.score {
+  color: green;
+  font-weight: bold;
+}
+
+.scrabble-word {
+  display: inline-block;
+}
+
+.home-link {
+  text-align: right;
+}
