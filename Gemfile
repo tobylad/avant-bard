@@ -32,7 +32,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'httparty'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-gem 'rename'
 gem 'ruby-anagrams'
 
 group :development, :test do
