@@ -1,9 +1,8 @@
 <p>Results: Each list of words is sorted from highest to lowest base score.</p>
-<div class="row">
-  <% @found_words.each_with_index do |words_array, i| %>
-    <div class="col-4">
-      <p><%= i+2 %>-letter words</p>
-      <ul>
+<div class="row" id="scrabble-results">
+  <% @found_words.each do |words_array| %>
+    <div class="col-3 word-list-wrapper">
+      <ul class="word-list">
         <% words_array.each do |word| %>
           <li class="scrabble-word"><%= word %></li> <span class="score"><%= Word.base_word_score(word) %></span>
           <br/>

@@ -23,19 +23,52 @@ class Word < ApplicationRecord
 
   def self.suggest_scrabble(letters, intersecting_letters)
     root           = RubyAnagrams::Root.new("all_words.txt")
-    anagrams       = root.anagrams(letters + intersecting_letters, partial: true)
-    word_max       = anagrams.max_by(&:length).length
     anagram_groups = []
 
-    word_max.times do |i|
-      arr = anagrams.select { |word| word.length === i+1 }
 
-      if arr.length > 1
-        sorted_arr = arr.sort_by { |word| self.base_word_score(word) }
-        anagram_groups << sorted_arr.reverse
+    if intersecting_letters.length == 1
+      anagrams = root.anagrams(letters + intersecting_letters, partial: true)
+      word_max = anagrams.max_by(&:length).length
+
+      word_max.times do |i|
+        arr = anagrams.select { |word| word.length == i+1 }
+        if arr.length > 1
+          sorted_arr = arr.sort_by { |word| self.base_word_score(word) }
+          anagram_groups << sorted_arr.reverse
+        end
       end
 
+    elsif intersecting_letters.length > 1
+      letter_array = intersecting_letters.chars
+
+      letter_array.each do |letter|
+        anagrams = root.anagrams(letters + letter, partial: true)
+        word_max = anagrams.max_by(&:length).length
+
+        word_max.times do |i|
+          arr = anagrams.select { |word| word.length == i+1 }
+          if arr.length > 1
+            sorted_arr = arr.sort_by { |word| self.base_word_score(word) }
+            anagram_groups << sorted_arr.reverse
+          end
+        end
+
+      end
+
+    elsif intersecting_letters.length == 0
+      anagrams       = root.anagrams(letters + intersecting_letters, partial: true)
+      word_max       = anagrams.max_by(&:length).length
+
+      word_max.times do |i|
+        arr = anagrams.select { |word| word.length === i+1 }
+        if arr.length > 1
+          sorted_arr = arr.sort_by { |word| self.base_word_score(word) }
+          anagram_groups << sorted_arr.reverse
+        end
+      end
     end
+
+    anagram_groups.each { |group| group.uniq! }
 
     anagram_groups
   end
