@@ -22,4 +22,9 @@ class WordsController < ApplicationController
     render "scrabble"
   end
 
+  def dad_joke
+    @joke = Word.get_joke
+    render "dad-joke"
+  end
+
 end

@@ -1,34 +1,62 @@
-<h1>Welcome to Avant-Bard!</h1>
-
-<div class="word-form-box">
-  <p><strong>Similar Words</strong></p>
-  <%= form_tag("/similar", method: "get") do %>
-    <%= label_tag(:q, "Enter a word to get words that have similar meaning:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+<div class="row">
+  <div class="col-12 center">
+    <%= image_tag("bard-guy.jpg", class: "bard-img") %>
+  </div>  
 </div>
 
-<div class="word-form-box">
-  <p><strong>Rhyming Words</strong></p>
-  <%= form_tag("/rhyme", method: "get") do %>
-    <%= label_tag(:q, "Enter a word to get words that rhyme with it:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-</div>
+<div class="row">
+  <div class="word-form-box col-12">
+    <a class="form-link" href="#similar-form">
+      <button class="btn btn-info form-expand">
+        Similar Words
+        <button class="btn btn-info plus">+</button>
+      </button>
+    </a>
+    <%= form_tag("/similar", method: "get", class: "hide", id: "similar-form") do %>
+      <%= label_tag(:q, "Enter a word to get words that have similar meaning:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
-<div class="word-form-box">
-  <p><strong>Scrabble Word Finder</strong></p>
-  <p><i>Note: Enter * for each blank tile</i></p>
-  <%= form_tag("/scrabble", method: "get") do %>
-    <%= label_tag(:l, "Enter letters from your board:") %>
-    <%= text_field_tag(:l) %>
-    <br/>
-    <%= label_tag(:i, "Enter intersecting letters (if any)") %>
-    <%= text_field_tag(:i) %>
-    
-    <br/>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <div class="word-form-box col-12">
+    <a class="form-link" href="#rhyme-form">
+      <button class="btn btn-info form-expand">
+        Rhyming Words
+        <button class="btn btn-info plus">+</button>
+      </button>
+    </a>
+    <%= form_tag("/rhyme", method: "get", class: "hide", id: "rhyme-form") do %>
+      <%= label_tag(:q, "Enter a word to get words that rhyme with it:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="word-form-box col-12">
+    <a class="form-link" href="#scrabble-form">
+      <button class="btn btn-info form-expand">
+        Scrabble Word Finder
+        <button class="btn btn-info plus">+</button>
+      </button>
+    </a>
+    <%= form_tag("/scrabble", method: "get", class: "hide", id: "scrabble-form") do %>
+      <p><i>Note: Enter * for each blank tile</i></p>
+      <%= label_tag(:l, "Enter letters from your board:") %>
+      <%= text_field_tag(:l) %>
+      <br/>
+      <%= label_tag(:i, "Enter intersecting letters (if any)") %>
+      <%= text_field_tag(:i) %>
+      
+      <br/>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="word-form-box col-12">
+    <!-- <button class="btn btn-info form-expand">Random Dad Joke<button class="btn btn-info plus">+</button></button></p> -->
+    <%= form_tag("/dad-joke", method: "get") do %>
+      <%= submit_tag "Random Dad Joke", class: "btn btn-info" %>
+    <% end %>
+  </div>
 </div>

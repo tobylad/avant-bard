@@ -1,12 +1,36 @@
 body {
+  font-family: 'Lato', sans-serif;
   margin: 25px;
 }
 
+.hide {
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.page-heading {
+  font-family: "MedievalSharp", cursive;
+  font-size: 400%;
+}
+
+.page-heading-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.form-link {
+  color: inherit;
+}
+
 .word-form-box {
-  border: 3px solid black;
-  border-radius: 10px;
-  margin-bottom: 25px;
-  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.word-form-box form {
+  margin-bottom: 10px;
 }
 
 .word-form-box input[type='text'] {
@@ -21,6 +45,11 @@ body {
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.plus {
+  background-color: #444;
+  font-weight: bold;
+}
+
 .score {
   color: green;
   font-weight: bold;
@@ -30,6 +59,48 @@ body {
   display: inline-block;
 }
 
-.home-link {
-  text-align: right;
+.word-list-wrapper {
+  text-align: center;
+}
+
+.letters-entered {
+  margin-bottom: 20px;
+}
+
+.letter-block {
+    background-color: #eab534;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #888888;
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 2px;
+    margin-bottom: 3px;
+    padding: 5px 12px;
+    width: 43px;
+}
+
+.dad-joke {
+  border: 3px solid #222;
+  border-radius: 10px;
+  font-size: 125%;
+  padding: 10px;
+  margin: 20px 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-heading {
+    font-size: 250%;
+  }
+  .page-heading-link {
+    text-decoration: underline;
+  }
+  .bard-img {
+    margin-bottom: 20px;
+    height: 150px;
+    width: 150px;
+  }
+  .letters-entered {
+    margin-bottom: 10px;
+  }
 }

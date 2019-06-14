@@ -1,6 +1,15 @@
 class Word < ApplicationRecord
   include HTTParty
 
+  def self.get_joke
+    resp = HTTParty.get("https://icanhazdadjoke.com/")
+    joke_html = RubyCheerio.new(resp.parsed_response)
+    joke = []
+    joke_html.find("div.card-content p.subtitle").each { |p| joke << p.text }
+    joke.first
+  end
+
+
   def self.find_similar(word)
     word_searched = word
     found_words   = []

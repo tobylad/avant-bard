@@ -1,0 +1,7 @@
+<h2>Dad Jokes</h2>
+
+<div class="dad-joke"><%= @joke %></div>
+
+<%= form_tag("/dad-joke", method: "get") do %>
+  <%= submit_tag "Get another Dad joke!", class: "btn btn-primary" %>
+<% end %>

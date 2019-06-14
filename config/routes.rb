@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'similar', to: 'words#similar'
   get 'rhyme', to: 'words#rhyme'
   get 'scrabble', to: 'words#scrabble'
+  get 'dad-joke', to: 'words#dad_joke'
 
   resource :words
 end
