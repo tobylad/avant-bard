@@ -34,6 +34,9 @@ class Word < ApplicationRecord
     root           = RubyAnagrams::Root.new("all_words.txt")
     anagram_groups = []
 
+    letters.downcase!
+    intersecting_letters.downcase!
+
 
     if intersecting_letters.length == 1
       anagrams = root.anagrams(letters + intersecting_letters, partial: true)
