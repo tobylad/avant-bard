@@ -3,16 +3,15 @@ $(document).ready(function() {
 });
 
 var hexCodes = [
-  "bcf",
-  "c379f0",
-  "aae2d7",
-  "d9cb3a",
-  "50d849",
-  "b38d86",
-  "777",
-  "da9fc4",
+  "#bcf",
+  "#c379f0",
+  "#aae2d7",
+  "#d9cb3a",
+  "#50d849",
+  "#da9fc4",
   "#fff",
-  "d42639"
+  "#e77985",
+  "#fc9460"
 ];
 
 function randomIndex(max) {
@@ -20,5 +19,5 @@ function randomIndex(max) {
 }
 
 function generateRandomBoxColor() {
-  $(".dad-joke").css("background-color", "#" + hexCodes[randomIndex(10)]);
+  $(".dad-joke").css("background-color", hexCodes[randomIndex(9)]);
 }
